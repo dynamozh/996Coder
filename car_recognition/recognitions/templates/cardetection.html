@@ -27,51 +27,39 @@
 	    line-height:60px;
 		}
 
-	  .mydiv-bg{
-		background: url(/static/desert-mountain-road-sunset.jpg) no-repeat;
-		background-size: cover;
-		width: 100%;
-		height: 600px;
-		position: relative;
+	  .fatherBox{
+		position:relative;
+		width:100%;
+		height:100%;
+		margin:0 auto;
 	  }
+	  .childBox{
+	    position:relative;
+		width:100%;
+		height:100%;}
+
 	  .mydiv{
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 500px;
-		bottom: 0;
+		position: relative;
+		clear: both;
+		top: 7.5%;
 		width: 100%;
 		height: 100px;
 		background:rgba(0,0,0,0.3);
 	  }
-	  .user-btn-info{
-		color:#fff;
-		background-color:#828a8c;
-		border-color:#707c80
-		}
-		.btn-info{
-		  color:#fff;
-		  background-color:#828a8c;
-		  border-color:#707c80
-		  }
-		.btn-info.focus,.btn-info:focus{
-		  color:#fff;
-		  background-color:#000000;
-		  border-color:#000000
-		  }
-		.btn-info:hover{
-		  color:#fff;
-		  background-color:#aaaaaa;
-		  border-color:#aaaaaa
-		  }
-		  .btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle.btn-info.focus,.open>.dropdown-toggle.btn-info:focus,.open>.dropdown-toggle.btn-info:hover{
-		   color:#fff;
-		   background-color:#000000;
-		   border-color:#000
-		   }
+      .user-bth {
+	    color:#fff;
+	    background-color:#828a8c;
+	    border-color:#707c80
+     }
+
+    .user-btn:hover {
+	  color:#004974;
+	  background-color:#aaaaaa;
+	  border-color:#78C3F3
+     }
 		    
 		
-.file {
+    .file {
     position: relative;
     display: inline-block;
     background: #828a8c;
@@ -85,14 +73,14 @@
     text-indent: 0;
     line-height: 20px;
 }
-.file input {
+    .file input {
     position: absolute;
     font-size: 100px;
 	right: 0;
     top: 0;
     opacity: 0;
 }
-.file:hover {
+    .file:hover {
     background: #aaaaaa;
     border-color: #78C3F3;
     color: #004974;
@@ -101,6 +89,32 @@
 
 
     </style>
+            <!--在网页标题左侧显示图标-->
+    <link rel="icon" href="/static/logo.ico" type="image/x-icon">
+    <!--在收藏夹显示图标-->
+    <link rel="shortcut icon" href="/static/logo.ico" type="image/x-icon">
+
+      <script type="text/javascript">
+            function getFileUrl(sourceId) {
+                var url;
+                if (navigator.userAgent.indexOf("MSIE")>=1) { // IE
+                    url = document.getElementById(sourceId).value;
+					console.log(url);
+                } else if(navigator.userAgent.indexOf("Firefox")>0) { // Firefox
+                    url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+					console.log(url);
+                } else if(navigator.userAgent.indexOf("Chrome")>0) { // Chrome
+                    url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+					console.log(url);
+                }
+                return url;
+            }
+            function preImg(sourceId, targetId) {
+                var url = getFileUrl(sourceId);
+                var imgPre = document.getElementById(targetId);
+                imgPre.src = url;
+            }
+        </script>
   </head>
 <body style="margin-top:50px;">
 <nav
@@ -153,29 +167,36 @@
 			</p>
 		</div>
 	</div>
-		<h1 class="text-center space">
-			功能演示
-		</h1>
-	<div class="container" >
-	 <div class="mydiv-bg">
-	 	<div class="mydiv">
-	  <form role="form" >
-		<div class="form-group">
-			<a href="javascript:;" 
-				class="file text-center" 
-				style="font-size:20px; color:white"
-				>选择文件
-			<input type="file" name="" id="">
-			</a>
-				<p class="help-block" style="color:white">
-					图片文件类型支持PNG、JPG、JPEG、BMP，图片大小不超过2M。
-				</p>
-		</div>
-			<button type="submit" class="btn btn-info btn-block " style="font-size:20px">上传</button>
-	  </form>
-	 </div>
-	 </div>
-	</div>
+      <h1 class="text-center space">
+		  功能演示
+	  </h1>
+	  <div class="fatherBox">
+	  <div class="childBox">
+	      <img src="/static/desert-mountain-road-sunset.jpg"
+			   id="photo"
+               class="img-responsive"
+			   alt="Cinque Terre"
+			   width="100%"
+			   height="100%"
+		  />
+		  </div>
+	    <div class="mydiv">
+	      <form role="form" >
+		    <div class="form-group">
+			  <a href="javascript:;"
+				 class="file text-center"
+				 style="font-size:20px; color:white"
+			  >选择文件
+			    <input type="file" name="imgOne" id="imgOne" onchange="preImg(this.id,'photo');">
+			  </a>
+			  <p class="help-block" style="color:white">
+				  图片文件类型支持PNG、JPG、JPEG、BMP，图片大小不超过2M。
+			  </p>
+		    </div>
+			<button type="submit" class="btn user-bth btn-block " style="font-size:20px">上传</button>
+	      </form>
+	    </div>
+	  </div>
 	
 	
 </div>
