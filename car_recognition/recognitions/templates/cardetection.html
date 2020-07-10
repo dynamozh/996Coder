@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>车辆识别系统</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      #bg {
+        background: url(/static/d_bg.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+	  #divbg{
+	    background: url(/static/car.jpg);
+        background-size: 100% 600px;
+        background-repeat: no-repeat;
+      }
+      .space {
+        line-height: 500%;
+      }
+	  .spaceSmall{
+	    line-height:60px;
+		}
+
+	  .mydiv-bg{
+		background: url(/static/desert-mountain-road-sunset.jpg) no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 600px;
+		position: relative;
+	  }
+	  .mydiv{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 500px;
+		bottom: 0;
+		width: 100%;
+		height: 100px;
+		background:rgba(0,0,0,0.3);
+	  }
+	  .user-btn-info{
+		color:#fff;
+		background-color:#828a8c;
+		border-color:#707c80
+		}
+		.btn-info{
+		  color:#fff;
+		  background-color:#828a8c;
+		  border-color:#707c80
+		  }
+		.btn-info.focus,.btn-info:focus{
+		  color:#fff;
+		  background-color:#000000;
+		  border-color:#000000
+		  }
+		.btn-info:hover{
+		  color:#fff;
+		  background-color:#aaaaaa;
+		  border-color:#aaaaaa
+		  }
+		  .btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle.btn-info.focus,.open>.dropdown-toggle.btn-info:focus,.open>.dropdown-toggle.btn-info:hover{
+		   color:#fff;
+		   background-color:#000000;
+		   border-color:#000
+		   }
+		    
+		
+.file {
+    position: relative;
+    display: inline-block;
+    background: #828a8c;
+    border-radius: 4px;
+    padding: 4px 12px;
+	width: 100%;
+	height: 30px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+	right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #aaaaaa;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+
+    </style>
+  </head>
+<body style="margin-top:50px;">
+<nav
+      class="navbar navbar-default navbar-fixed-top navbar-inverse"
+      role="navigation"
+    >
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+        >
+          <span class="sr-only">Toggle navigation</span
+          ><span class="icon-bar"></span><span class="icon-bar"></span
+          ><span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">车辆识别系统</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li >
+            <a href="http://127.0.0.1:8000/index/">首页</a>
+          </li>
+          <li class="active">
+            <a href="#">车辆检测</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+	<img
+      src="/static/car_picture_back_1.jpg"
+      class="img-responsive"
+      alt="Cinque Terre"
+      width="100%"
+      height="400"
+    />
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h1 class="text-center space">
+				功能介绍
+			</h1>
+			<h3 class="text-center spaceSmall">
+				车辆检测和类型识别
+			</h3>
+			<p class="text-center spaceSmall" 
+			   style ="font-size:20px">
+				 面向中低空拍摄场景，检测图像中的所有车辆，返回每辆车的类型和坐标位置，可识别小汽车、卡车、巴士、摩托车、三轮车5大类车辆
+			</p>
+		</div>
+	</div>
+		<h1 class="text-center space">
+			功能演示
+		</h1>
+	<div class="container" >
+	 <div class="mydiv-bg">
+	 	<div class="mydiv">
+	  <form role="form" >
+		<div class="form-group">
+			<a href="javascript:;" 
+				class="file text-center" 
+				style="font-size:20px; color:white"
+				>选择文件
+			<input type="file" name="" id="">
+			</a>
+				<p class="help-block" style="color:white">
+					图片文件类型支持PNG、JPG、JPEG、BMP，图片大小不超过2M。
+				</p>
+		</div>
+			<button type="submit" class="btn btn-info btn-block " style="font-size:20px">上传</button>
+	  </form>
+	 </div>
+	 </div>
+	</div>
+	
+	
+</div>
+
+
+
+</body>
