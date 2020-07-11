@@ -1,6 +1,6 @@
-#996Coder
+# 996Coder
 
-##2.Car Plate Rrecognition
+## 2.Car Plate Rrecognition
 
 ### 安装包
 
@@ -29,7 +29,7 @@ cmake ../
 sudo make -j 
 ```
 
-##3.Car Identification
+## 3.Car Identification
 
 ### Dependencies
 
@@ -37,3 +37,8 @@ sudo make -j
 - cuda>=10.0
 - python>=3.6
 - `pip3 install -r requirements.txt`
+
+### Demo
+
+- download [pre-trained model](https://drive.google.com/file/d/1KOPf-5njMV-bwEVf67xqjIyZKDEJpfZF/view?usp=sharing) and put in `3.carIdentification/weights`
+- Baidu Link: [pre-trained model](https://pan.baidu.com/s/184-_gjR35VV-EfRuY_FHKA)  密码:bays
