@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>车辆识别系统</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      #bg {
+        background: url(/static/d_bg.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+	  #divbg{
+	    background: url(/static/car.jpg);
+        background-size: 100% 600px;
+        background-repeat: no-repeat;
+      }
+      .space {
+		  padding-top: 200px;
+		  padding-right: 0px;
+		  padding-left: 0px;
+		  padding-bottom: 50px;
+	  }
+	  .spaceSmall{
+	    line-height:60px;
+		}
+
+	  .fatherBox{
+		position:relative;
+		width:100%;
+		height:100%;
+		margin:0 auto;
+	  }
+	  .childBox{
+	    position:relative;
+		width:100%;
+		height:100%;}
+
+	  .mydiv{
+		position: absolute;
+		clear: both;
+	    bottom: 5px;
+		width: 100%;
+		height: 100px;
+		background:rgba(0,0,0,0.3);
+	  }
+      .user-bth {
+	    color:#fff;
+	    background-color:#828a8c;
+	    border-color:#707c80
+     }
+
+    .user-btn:hover {
+	  color:#004974;
+	  background-color:#aaaaaa;
+	  border-color:#78C3F3
+     }
+		    
+		
+    .file {
+    position: relative;
+    display: inline-block;
+    background: #828a8c;
+    border-radius: 4px;
+    padding: 4px 12px;
+	width: 100%;
+	height: 30px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+    .file input {
+    position: absolute;
+    font-size: 100px;
+	right: 0;
+    top: 0;
+    opacity: 0;
+}
+    .file:hover {
+    background: #aaaaaa;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+
+    </style>
+            <!--在网页标题左侧显示图标-->
+    <link rel="icon" href="/static/logo.ico" type="image/x-icon">
+    <!--在收藏夹显示图标-->
+    <link rel="shortcut icon" href="/static/logo.ico" type="image/x-icon">
+
+      <script type="text/javascript">
+            function getFileUrl(sourceId) {
+                var url;
+                if (navigator.userAgent.indexOf("MSIE")>=1) { // IE
+                    url = document.getElementById(sourceId).value;
+					console.log(url);
+                } else if(navigator.userAgent.indexOf("Firefox")>0) { // Firefox
+                    url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+					console.log(url);
+                } else if(navigator.userAgent.indexOf("Chrome")>0) { // Chrome
+                    url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+					console.log(url);
+                }
+                return url;
+            }
+            function preImg(sourceId, targetId) {
+                var url = getFileUrl(sourceId);
+                var imgPre = document.getElementById(targetId);
+                imgPre.src = url;
+            }
+        </script>
+  </head>
+<body style="margin-top:50px;">
+<nav
+      class="navbar navbar-default navbar-fixed-top navbar-inverse"
+      role="navigation"
+    >
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+        >
+          <span class="sr-only">Toggle navigation</span
+          ><span class="icon-bar"></span><span class="icon-bar"></span
+          ><span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><h5>车辆识别系统</h5></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li >
+            <a href="http://127.0.0.1:8000/index/"><h5>首页</h5></a>
+          </li>
+            <li>
+            <a href="#"><h5>车型识别</h5></a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:8000/index/cardetection/"><h5>车辆检测</h5></a>
+          </li>
+            <li class="active">
+            <a href="#"><h5>车牌识别</h5></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+	<img
+      src="/static/car_picture_back_2.jpg"
+      class="img-responsive"
+      alt="Cinque Terre"
+      width="100%"
+      height="400"
+    />
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h2 class="text-center space">
+				功能介绍
+			</h2>
+			<div class="row clearfix">
+				<div class="col-md-5 column">
+					<h3 class="text-center spaceSmall" >
+						<b>车牌号识别</b>
+					</h3>
+					<p class="spaceSmall"
+					   style ="font-size:20px">
+				 		识别图片中车牌的数字号码
+					</p>
+				</div>
+				<div class="col-md-2 column"></div>
+				<div class="col-md-5 column">
+					<h3 class="text-center spaceSmall">
+						<b>车牌地域编码识别</b>
+					</h3>
+					<p class="spaceSmall"
+					   style ="font-size:20px">
+				 		识别图片中车牌的地域编码，仅支持中国大陆机动车车牌
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+      <h2 class="text-center space">
+		  功能使用
+	  </h2>
+	<div class="row clearfix">
+		<div class="col-md-8 column">
+			<div class="fatherBox">
+	      			<img src="{{ img_url }}"
+			   			id="photo"
+               			class="img-responsive"
+			  			 alt="Cinque Terre"
+			   			width="100%"
+			   			height="100%"
+		  			/>
+	    		<div class="mydiv">
+	     			 <form role="form" method="post" enctype="multipart/form-data"  >
+		   			 <div class="form-group">
+			 			 <a href="javascript:;"
+				 			class="file text-center"
+							 style="font-size:20px; color:white"
+						 >选择文件
+							 <input type="file" name="img" id="imgOne" onchange="preImg(this.id,'photo');">
+			  			 </a>
+			 				 <p class="help-block" style="color:white">
+				  			图片文件类型支持PNG、JPG、JPEG、BMP，图片大小不超过2M。
+			 				 </p>
+		    		</div>
+						 {% csrf_token %}
+						 <button type="submit" class="btn user-bth btn-block " style="font-size:20px">上传</button>
+	      			</form>
+	    		</div>
+	  		</div>
+		</div>
+		<div class="col-md-4 column">
+            <b>识别结果</b><br>
+            {{ resultList }}
+		</div>
+	</div>
+	
+</div>
+
+
+
+</body>

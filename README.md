@@ -1,21 +1,22 @@
 # 996Coder
 
-## 2.Car Plate Rrecognition
+## 1.Car Recognition
+
+### Dependencies
+
+- Python 3.6.8
+- PyTorch 1.3
+
+### Demo
+
+- Download [pre-trained model_attr](https://drive.google.com/file/d/1DhGx6zx58gMG7Cz0cd40hb_qQaCE4yy4/view?usp=sharing), [pre-trained model_color](https://drive.google.com/file/d/11ao60U5NMnebOixpRU9jedCAJI70H-oE/view?usp=sharing) and put in `module_carRecognition/weights`
+- Baidu Link: [pre-trained model_attr](https://pan.baidu.com/s/1PzlS9o-TBKmnGOdwa0cTpw)  密码:9dc5, [pre-trained model_color](https://pan.baidu.com/s/12lu8x0XUqGSztQQN6cLiVw)  密码:y846
+
+## 2.Car Plate Recognition
 
 ### 安装包
 
 `python -m pip install hyperlpr`
-
-### Dependencies
-
-- Keras (>2.0.0)
-- Theano(>0.9) or Tensorflow(>1.1.x)
-- Numpy (>1.10)
-- Scipy (0.19.1)
-- OpenCV(>3.0)
-- Scikit-image (0.13.0)
-- PIL
-- Opencv (>3.4)
 
 ### Linux/Mac 编译
 
@@ -29,7 +30,7 @@ cmake ../
 sudo make -j 
 ```
 
-## 3.Car Identification
+## 3.Car Detection
 
 ### Dependencies
 
@@ -40,5 +41,5 @@ sudo make -j
 
 ### Demo
 
-- download [pre-trained model](https://drive.google.com/file/d/1KOPf-5njMV-bwEVf67xqjIyZKDEJpfZF/view?usp=sharing) and put in `3.carIdentification/weights`
+- Download [pre-trained model](https://drive.google.com/file/d/1KOPf-5njMV-bwEVf67xqjIyZKDEJpfZF/view?usp=sharing) and put in `module_carIdentification/weights`
 - Baidu Link: [pre-trained model](https://pan.baidu.com/s/184-_gjR35VV-EfRuY_FHKA)  密码:bays
