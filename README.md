@@ -43,3 +43,11 @@ sudo make -j
 
 - Download [pre-trained model](https://drive.google.com/file/d/1KOPf-5njMV-bwEVf67xqjIyZKDEJpfZF/view?usp=sharing) and put in `module_carIdentification/weights`
 - Baidu Link: [pre-trained model](https://pan.baidu.com/s/184-_gjR35VV-EfRuY_FHKA)  密码:bays
+
+## 6. Driver Behavior
+
+### Demo
+
+- Download [pre-trained model](https://drive.google.com/file/d/1AtI1yb2ECEc5bgO9Vu6r-TZlXxW2RDeh/view?usp=sharing) and put in `module_driverBehavior`
+- Baidu Link: [pre-trained model](https://pan.baidu.com/s/1ioQXRCUqLXUz9w_oBqWzsg)  密码:3niu
+

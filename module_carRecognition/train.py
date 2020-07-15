@@ -3,10 +3,10 @@ import torch
 from torch import nn
 # from torch.utils.tensorboard import SummaryWriter
 
-from .config import device, grad_clip, print_freq, num_workers, patience
-from .data.data_gen import CarRecognitionDataset
-from .models import CarRecognitionModel
-from .util.utils import parse_args, save_checkpoint, AverageMeter, clip_gradient, get_logger, accuracy, get_learning_rate, \
+from config import device, grad_clip, print_freq, num_workers, patience
+from data.data_gen import CarRecognitionDataset
+from models import CarRecognitionModel
+from util.utils import parse_args, save_checkpoint, AverageMeter, clip_gradient, get_logger, accuracy, get_learning_rate, \
     adjust_learning_rate
 
 

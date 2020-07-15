@@ -24,7 +24,7 @@ def run(img):
     return result
 
 
-# if __name__ == '__main__':
-#     image = Image.open("")
-#     result = run(image)
-#     print(result)
+if __name__ == '__main__':
+    image = Image.open("/Users/johnson/Documents/College/大二下課程/實訓/996Coder/module_carDetection/imgs/test1.jpg")
+    result = run(image)
+    print(result)

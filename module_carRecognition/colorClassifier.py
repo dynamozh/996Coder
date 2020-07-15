@@ -46,7 +46,7 @@ class Cls_Net(torch.nn.Module):
         self.input_size = input_size
 
         # delete original FC and add custom FC
-        self.features = torchvision.models.resnet18(pretrained=True)
+        self.features = torchvision.models.resnet18(pretrained=False)
         del self.features.fc
         # print('feature extractor:\n', self.features)
 

@@ -1,9 +1,9 @@
 from torch import nn
 from torchvision import models
 
-from .config import num_classes
+# from .config import num_classes
 # Yu-cheng Computer import path
-# from config import num_classes
+from config import num_classes
 
 
 class CarRecognitionModel(nn.Module):

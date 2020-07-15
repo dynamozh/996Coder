@@ -15,13 +15,13 @@ import torch
 from PIL import Image
 import matplotlib.pyplot as plt
 
-from .data.data_gen import data_transforms
-from .models import CarRecognitionModel
-from .colorClassifier import color_Classifier
+# from .data.data_gen import data_transforms
+# from .models import CarRecognitionModel
+# from .colorClassifier import color_Classifier
 # Yu-cheng Computer import path
-# from data.data_gen import data_transforms
-# from models import CarRecognitionModel
-# from colorClassifier import color_Classifier
+from data.data_gen import data_transforms
+from models import CarRecognitionModel
+from colorClassifier import color_Classifier
 
 
 def run(img):
@@ -58,7 +58,7 @@ def run(img):
     return results
 
 if __name__ == '__main__':
-    img = Image.open('./images/samples/00002.jpg')
+    img = Image.open('./images/samples/00033.jpg')
 
     res = run(img)
     print(res)
